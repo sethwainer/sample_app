@@ -53,5 +53,20 @@ describe "StaticPages" do
     end
   end
 
+ describe "contact page" do
+
+    it "should have the content contact us" do
+      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
+      visit '/static_pages/contact'
+      page.should have_selector('h1', text: 'Contact Us')
+    end
+  
+    it "should have the right title" do
+      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
+      visit '/static_pages/contact'
+      page.should have_selector('title', text: " | Contact")
+    end
+  end
+ 
  
 end
